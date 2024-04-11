@@ -27,18 +27,25 @@ public class InmuebleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_inmueble")
     private Long idInmueble;
+
     @JoinColumn(name = "id_estado_inmueble")
     @OneToOne(fetch = FetchType.LAZY)
     private EstadoInmuebleEntity idEstadoInmueble;
-    @JoinColumn(name = "id_tipo")
-    @OneToOne(fetch = FetchType.LAZY)
-    private TipoEntity tipoInmueble;
+
+    @JoinColumn(name = "id_tipo_inmueble")
+    @OneToOne
+    private TipoEntity IdtipoInmueble;
+
     private Double superficie;
     private String direccion;
+
     @Column(name = "num_referencia")
     private Double numReferencia;
-    @OneToOne(mappedBy = "inmueble")
+
+    @JoinColumn(name = "id_propietario")
+    @OneToOne(cascade = CascadeType.ALL)
     private PropietarioEntity idPropietario;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonBackReference
     @JoinColumn(name = "id_visita")

@@ -10,14 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "zonas")
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonaEntity {
+public class ZonasEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_persona")
-    private Long idPersona;
-    private String nombre;
-    private Double telefono;
+    @Column(name = "id_zona")
+    private Long idZona;
+    private String ubicacion;
 }

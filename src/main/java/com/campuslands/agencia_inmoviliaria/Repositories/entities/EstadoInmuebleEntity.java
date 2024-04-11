@@ -23,6 +23,6 @@ public class EstadoInmuebleEntity {
     private Long idEstadoInmueble;
     private String estado;
     private Double precio;
-    @OneToOne(mappedBy = "estado_inmueble", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private InmuebleEntity inmueble;
 }

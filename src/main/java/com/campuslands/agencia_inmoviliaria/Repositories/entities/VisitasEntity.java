@@ -2,7 +2,6 @@ package com.campuslands.agencia_inmoviliaria.Repositories.entities;
 
 import java.util.List;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

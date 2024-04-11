@@ -10,14 +10,18 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "villa")
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonaEntity {
+public class VillaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_persona")
-    private Long idPersona;
-    private String nombre;
-    private Double telefono;
+    private Long idVilla;
+    private String urbanizacion;
+    @Column(name = "tamaño_parcela")
+    private Double tamañoParcela;
+    @Column(name = "numero_estancias")
+    private Integer numEstancias;
+    @Column(name = "tipo_estancia")
+    private String tipoEstancia;
 }

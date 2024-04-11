@@ -1,23 +1,23 @@
 package com.campuslands.agencia_inmoviliaria.Repositories.entities;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "oficinas")
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonaEntity {
+public class OficinasEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_persona")
-    private Long idPersona;
-    private String nombre;
-    private Double telefono;
+    private Long idOficina;
+    @OneToMany(cascade = CascadeType.ALL)
+    private ZonasEntity idZona;
 }

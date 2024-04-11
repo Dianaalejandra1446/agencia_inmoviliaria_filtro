@@ -23,8 +23,8 @@ public class InmuebleEspecialesEntity {
     @Column(name = "id_inmueble_especial")
     private Long idInmuebleEspecial;
     @Column(name = "id_villa")
-    @OneToMany(targetEntity = VisitasEntity.class, cascade = CascadeType.ALL)
-    private  List<VisitasEntity> idVilla;
+    @OneToMany(targetEntity = VillaEntity.class, cascade = CascadeType.ALL)
+    private  List<VillaEntity> idVilla;
     @Column(name = "id_locales")
     @OneToMany(targetEntity = LocalesEntity.class, cascade = CascadeType.ALL)
     private List<LocalesEntity> idLocales;
