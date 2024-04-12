@@ -9,12 +9,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "datos_visitas")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class DatosVisitaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

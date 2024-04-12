@@ -7,12 +7,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "locales")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class LocalesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

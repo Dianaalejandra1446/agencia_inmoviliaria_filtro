@@ -1,8 +1,7 @@
 package com.campuslands.agencia_inmoviliaria.Repositories.entities;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,9 +19,10 @@ import lombok.NoArgsConstructor;
 public class EstadoInmuebleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_estado_inmueble")
     private Long idEstadoInmueble;
     private String estado;
     private Double precio;
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne()
     private InmuebleEntity inmueble;
 }

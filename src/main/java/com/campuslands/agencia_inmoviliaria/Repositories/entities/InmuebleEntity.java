@@ -28,12 +28,12 @@ public class InmuebleEntity {
     @Column(name = "id_inmueble")
     private Long idInmueble;
 
-    @JoinColumn(name = "id_estado_inmueble")
-    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "estado_inmueble_id")
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private EstadoInmuebleEntity idEstadoInmueble;
 
-    @JoinColumn(name = "id_tipo_inmueble")
-    @OneToOne
+    @JoinColumn(name = "tipo_inmueble_id")
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private TipoEntity IdtipoInmueble;
 
     private Double superficie;
@@ -42,8 +42,8 @@ public class InmuebleEntity {
     @Column(name = "num_referencia")
     private Double numReferencia;
 
-    @JoinColumn(name = "id_propietario")
-    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "propietario_id")
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private PropietarioEntity idPropietario;
 
     @ManyToOne(cascade = CascadeType.ALL)

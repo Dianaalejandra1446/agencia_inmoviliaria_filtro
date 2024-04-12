@@ -14,12 +14,14 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "propietario")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class PropietarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,7 @@ public class PropietarioEntity {
     @JoinColumn(name = "id_persona")
     private List<PersonaEntity> idPersona;
     private String llavesInmueble;
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    
+    @OneToOne()
     private InmuebleEntity inmueble;
 }
