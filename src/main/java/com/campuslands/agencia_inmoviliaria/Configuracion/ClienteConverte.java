@@ -23,28 +23,29 @@ public class ClienteConverte {
         return dbm.map(clienteDTO,ClienteEntity.class);
     }
 
-    public ClienteDTO convertirClienteDTO(ClienteEntity clienteEntity){
+    public ClienteDTO convertirClienteDTO(ClienteEntity clienteEntity) {
         ClienteDTO clienteDTO = dbm.map(clienteEntity, ClienteDTO.class);
-
         clienteDTO.setIdCliente(clienteEntity.getIdCliente());
-
-        if (clienteEntity.getIdCliente() != null) {
-            List<PersonaDTO> datosPersona = new ArrayList<>();
+    
+        if (clienteEntity.getIdPersona() != null && !clienteEntity.getIdPersona().isEmpty()) {
+            List<String> nombresPersonas = new ArrayList<>();
             for (PersonaEntity personaEntity : clienteEntity.getIdPersona()) {
-                PersonaDTO personaDTO = dbm.map(datosPersona, PersonaDTO.class);
-                datosPersona.add(personaDTO); 
+                PersonaDTO personaDTO = dbm.map(personaEntity, PersonaDTO.class);
+                nombresPersonas.add(personaDTO.getNombre());
             }
-            clienteDTO.setIdPersona(datosPersona);
+            clienteDTO.setIdPersona(nombresPersonas);
         }
-
-        if (clienteEntity.getIdDatosVisita() != null) {
-            List<DatosVisitaDTO> datosVisita = new ArrayList<>();
+    
+        if (clienteEntity.getIdDatosVisita() != null && !clienteEntity.getIdDatosVisita().isEmpty()) {
+            List<String> comentarios = new ArrayList<>();
             for (DatosVisitaEntity datosVisitaEntity : clienteEntity.getIdDatosVisita()) {
-                DatosVisitaDTO datosVisitaDTO = dbm.map(datosVisita, DatosVisitaDTO.class);
-                datosVisita.add(datosVisitaDTO);        
-            }
-            clienteDTO.setIdDatosVisita(datosVisita);
+                DatosVisitaDTO datosVisitaDTO = dbm.map(datosVisitaEntity, DatosVisitaDTO.class);
+                comentarios.add(datosVisitaDTO.getComentario());
+            }            
+            clienteDTO.setIdDatosVisita(comentarios);
         }
+    
         return clienteDTO;
     }
+    
 }

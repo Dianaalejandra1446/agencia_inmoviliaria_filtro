@@ -17,7 +17,7 @@ import com.campuslands.agencia_inmoviliaria.Dto.InmueblesDTO;
 import com.campuslands.agencia_inmoviliaria.Services.InmuebleService;
 
 @RestController
-@RequestMapping("inmueble")
+@RequestMapping("/inmueble")
 public class InmuebleController {
     @Autowired
     private InmuebleService inmuebleService;

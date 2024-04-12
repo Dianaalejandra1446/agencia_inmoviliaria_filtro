@@ -8,9 +8,9 @@ import lombok.Data;
 public class InmueblesDTO {
     private Long idInmueble;
 
-    private String estadoInmueble;
+    private Long idEstadoInmueble;
 
-    private String tipoInmueble;
+    private Long IdtipoInmueble;
 
     private Double superficie;
 

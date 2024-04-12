@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class ClienteDTO {
     private Long idCliente;
-    private List<PersonaDTO> idPersona;
-    private List<DatosVisitaDTO> idDatosVisita;
+    private List<String> idPersona;
+    private List<String> idDatosVisita;
 }

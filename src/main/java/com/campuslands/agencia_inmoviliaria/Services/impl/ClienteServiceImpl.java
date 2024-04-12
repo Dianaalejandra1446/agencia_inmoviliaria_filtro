@@ -3,6 +3,7 @@ package com.campuslands.agencia_inmoviliaria.Services.impl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.campuslands.agencia_inmoviliaria.Configuracion.ClienteConverte;
@@ -11,6 +12,9 @@ import com.campuslands.agencia_inmoviliaria.Repositories.ClienteRepository;
 import com.campuslands.agencia_inmoviliaria.Repositories.entities.ClienteEntity;
 import com.campuslands.agencia_inmoviliaria.Services.ClienteService;
 
+import lombok.AllArgsConstructor;
+@Service
+@AllArgsConstructor
 public class ClienteServiceImpl implements ClienteService{
     @Autowired
     private ClienteRepository clienteRepository;
